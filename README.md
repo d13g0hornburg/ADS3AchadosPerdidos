@@ -25,3 +25,6 @@ Semestre: 3
 	*HORÁRIO QUE FOI ENCONTRADO
 	*ENCONTRADO POR
 	*ENTREGUE PARA: (SETOR)
+
+ ### Modelo de protocolo
+![Protocolo](https://ibb.co/DMnm4WW)
