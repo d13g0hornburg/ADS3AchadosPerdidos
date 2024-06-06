@@ -26,7 +26,7 @@ Semestre: 3
 	*ENCONTRADO POR
 	*ENTREGUE PARA: (SETOR)
 
- ### 6-Comandos para instalar as depenências do NODE.JS
+ ### 6-Comandos para instalar as dependências do NODE.JS
 	*npm install express
  	*npm install mysql2
   	*npm install body-parser 
