@@ -26,5 +26,11 @@ Semestre: 3
 	*ENCONTRADO POR
 	*ENTREGUE PARA: (SETOR)
 
+ ### 6-Comandos para instalar as depenências do NODE.JS
+	*npm install express
+ 	*npm install mysql2
+  	*npm install body-parser 
+   	*npm install date-fns
+
  ### Modelo de protocolo
 <a href="https://ibb.co/DMnm4WW"><img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" /></a>
