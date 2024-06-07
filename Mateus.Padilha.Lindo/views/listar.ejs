@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"> <!-- Adicione o caminho para seu arquivo CSS -->
+    <script src="/script.js"></script>
+    <style>
+        /* Esconde o botão de impressão na versão de impressão */
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+    <title>Lista de objetos encontrados!</title>
+</head>
+<body>
+    <div class="table-container">
+    <h1>Relatório de itens</h1>
+    <button class="no-print" onclick="window.print()">Imprimir</button>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Ambiente</th>
+                <th>Professor</th>
+                <th>Curso</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Encontrado por</th>
+                <th>Ações</th>
+            </tr>
+            <% objetos.forEach(objeto => { %>
+            <tr>
+                <td><%= objeto.id %></td>
+                <td><%= objeto.descricao %></td>
+                <td><%= objeto.ambiente %></td>
+                <td><%= objeto.professor %></td>
+                <td><%= objeto.curso %></td>
+                <td><%= format(new Date(objeto.data), 'yyyy-MM-dd') %></td>
+                <td><%= objeto.hora.slice(0, 5) %></td>
+                <td><%= objeto.encontrado %></td>
+                <td>
+                    <a href="/editar/<%= objeto.id %>">Editar</a>
+                    <a href="/excluir/<%= objeto.id %>">Excluir</a>
+                    <button class="no-print" onclick="window.open('/imprimir/<%= objeto.id %>')">Imprimir Protocolo</button>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+    <a class="no-print" href="/html/home.html">Voltar</a>
+</body>
+</html>
