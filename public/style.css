@@ -96,3 +96,57 @@ section#sobre, section#apoio{
         content: none;
     }
 }
+/*?============================== Home Inicio =======================================*/
+:root{
+    --azul: #1453bd;
+    --amarelo: #f19000;
+    --roxo: #3a3185;
+    --branco: #fff;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#h1{
+    display: flex;
+    justify-content: center;
+}
+header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px;
+    background-color: var(--azul);
+    height: 100px;
+    align-items: center;
+    color: var(--branco);
+
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+}
+#botoes{
+    display: flex;
+    justify-content: center;
+}
+#botoes > form > input{
+    margin: 25px;
+    height: 50px;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--azul);
+    color: aliceblue;
+}
+#botoes > form > input:hover{
+    transition: 1s;
+    background-color: rgb(120, 0, 150);
+}
+
+/*?============================ Home Final ================================*/
