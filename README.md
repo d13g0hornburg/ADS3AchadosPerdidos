@@ -31,6 +31,7 @@ Semestre: 3
  	*npm install mysql2
   	*npm install body-parser 
    	*npm install date-fns
+    	*npm install multer
 
  ### Modelo de protocolo
 <a href="https://ibb.co/DMnm4WW"><img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" /></a>
