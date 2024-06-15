@@ -27,11 +27,11 @@ Semestre: 3
 	*ENTREGUE PARA: (SETOR)
 
  ### 6-Comandos para instalar as dependências do NODE.JS
-	*npm install express
- 	*npm install mysql2
-  	*npm install body-parser 
-   	*npm install date-fns
-    	*npm install multer
+	*npm install express --> facilita a criação de aplicativos web e APIs
+ 	*npm install mysql2 --> permite a conexão e a execução de consultas a um banco de dados MySQL
+  	*npm install body-parser --> analisa (parse) o corpo das requisições HTTP, facilitando a extração de dados enviados em formulários (URL-encoded) ou em formato JSON
+   	*npm install date-fns --> oferece uma série de funções para trabalhar com datas de forma simples e eficiente, como formatação, comparação, adição e subtração de dias, entre outras.
+    *npm install multer --> facilita o processamento de arquivos enviados via formulário multipart/form-data
 
  ### Modelo de protocolo
 <a href="https://ibb.co/DMnm4WW"><img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" /></a>
