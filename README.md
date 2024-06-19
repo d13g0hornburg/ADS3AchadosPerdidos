@@ -3,6 +3,13 @@
 ## Descrição
 - Este projeto visa criar um site para facilitar a administração de itens perdidos e encontrados na Faculdade Senac Jaraguá do Sul
 
+## Motivo da criação do projeto
+Este projeto de extensão é baseado nos Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas, visando contribuir para a comunidade acadêmica de maneira sustentável e eficiente. A iniciativa tem como objetivo proporcionar um sistema organizado e centralizado para o gerenciamento de itens perdidos e encontrados na faculdade, promovendo a responsabilidade e a colaboração entre os alunos, professores e funcionários.
+
+A criação deste site de achados e perdidos está sendo coordenada pelo professor Márcio Rui, com o desenvolvimento liderado pela Professora [Me. Karen Andressa Carvalho](https://www.linkedin.com/in/karen-carvalho-55873128/). Através deste projeto, buscamos não apenas facilitar a recuperação de objetos perdidos, mas também fomentar valores de honestidade e solidariedade dentro da nossa comunidade acadêmica.
+
+Com este sistema, esperamos reduzir a frustração e o tempo perdido na busca por itens, promovendo um ambiente mais organizado e seguro. Este projeto reflete nosso compromisso com a inovação, a sustentabilidade e a melhoria contínua da qualidade de vida no campus.
+
 ## Principais Funcionalidades
 - Registro e login de usuários (administradores e coordenadores)
 - Cadastro de itens perdidos
@@ -77,5 +84,4 @@ npm install express-validator
 <a href="https://ibb.co/DMnm4WW">
      <img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" />
 </a>
-
 ~~~
