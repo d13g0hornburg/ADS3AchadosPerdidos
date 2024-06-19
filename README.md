@@ -36,3 +36,25 @@ npm install express-validator
 ~~~
 
 ## Como usar:
+- Cadastrar novo objeto:
+     1. Entre com o login e senha (Login: admin, senha: 1234)
+     2. Na tela home clique no botão cadastra item;
+     3. Preenchas os campos;
+     4. Clique em Criar.
+
+- Listar todos os objeto:
+     1. Entre com o login e senha (Login: admin, senha: 1234)
+     2. Na tela home clique no botão listar itens;
+ 
+- Imprimir todos os itens:
+     1. Entre com o login e senha (Login: admin, senha: 1234)
+     2. Na tela home clique no botão listar itens;
+     3. Clique no botão imprimir.
+
+ - Imprimir um objetos específico:
+     1. Entre com o login e senha (Login: admin, senha: 1234)
+     2. Na tela home clique no botão listar itens;
+     3. Selecione o item desejado;
+     4. clique em imprimir.
+
+  ##
