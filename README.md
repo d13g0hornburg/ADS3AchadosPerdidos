@@ -1,7 +1,7 @@
 # Achados e Perdidos para a Faculdade Senac
 
 ## Descrição
-- Este projeto visa criar um site para facilitar a administração de itens perdidos e encontrados na Faculdade Senac Jaraguá do Sul
+Este projeto visa criar um site para facilitar a administração de itens perdidos e encontrados na Faculdade Senac Jaraguá do Sul
 
 ## Motivo da criação do projeto
 Este projeto de extensão é baseado nos Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas, visando contribuir para a comunidade acadêmica de maneira sustentável e eficiente. A iniciativa tem como objetivo proporcionar um sistema organizado e centralizado para o gerenciamento de itens perdidos e encontrados na faculdade, promovendo a responsabilidade e a colaboração entre os alunos, professores e funcionários.
