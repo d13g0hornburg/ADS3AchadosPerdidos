@@ -57,4 +57,25 @@ npm install express-validator
      3. Selecione o item desejado;
      4. clique em imprimir.
 
-  ##
+## Contato
+  Em caso de dúvidas, favor entrar em contato com um dos integrantes:
+  - [Davi Padilha](https://www.linkedin.com/in/davi-emanuel-araujo-padilha-b57ab2272/)
+  - [Diego Hornburg](https://www.linkedin.com/in/dihb/)
+  - [Enthoni Nagel](https://www.linkedin.com/in/enthoni-s-nagel-818754288/)
+  - [Mateus Padilha](https://www.linkedin.com/in/mateus-padilha-077766291/)
+  - Samuel
+
+## Autores
+- Davi Padilha
+- Diego Hornburg
+- Enthoni Nagel
+- Mateus Padilha
+- Samuel
+
+## Modelo de Protocolo
+~~~html
+<a href="https://ibb.co/DMnm4WW">
+     <img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" />
+</a>
+
+~~~
