@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <script src="script.js"></script>
     <title>Cadastrar Item</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section id="home">
-            <div>
-                <h2>Cadastrar Item</h2>
-                <form id="objeto-form" action="/objeto" method="post">
-                    <div>
-                        <input type="text" name="objeto" required>
-                        <label>Objeto encontrado</label>
-                    </div>
-                    <div>
-                        <input type="text" name="ambiente" required>
-                        <label>ambiente</label>
-                    </div>
-                    <div>
-                        <input type="text" name="professor">
-                        <label>professor</label>
-                    </div>
-                    <div>
-                        <input type="text" name="curso">
-                        <label>curso</label>
-                    </div>
-                    <div>
-                        <input type="date" name="data" required>
-                        <label>data</label>
-                    </div>
-                    <div>
-                        <input type="time" name="hora">
-                        <label>hora</label>
-                    </div>
-                    <div>
-                        <input type="text" name="encontrado" required>
-                        <label>Encontrado por:</label>
-                    </div>
-                    <button>Enviar</button><br>
-                </form>
-            </div>
-        </section>
+      <h2>Cadastrar Item</h2>
+      <form id="objeto-form" action="/objeto" method="post" enctype="multipart/form-data">
+        <div class="input-container">
+          <label for="descricao">Objeto encontrado</label>
+          <input
+            class="cadastroInput"
+            type="text"
+            name="descricao"
+            required
+            placeholder="Descrição"
+          />
+        </div>
+        <div class="input-container">
+          <label for="dataEncontrado">Data Encontrado</label>
+          <input
+            class="cadastroInput"
+            type="date"
+            name="data"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <label for="horaEncontrado">Data Encontrado</label>
+          <input
+            class="cadastroInput"
+            type="time"
+            name="hora"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <label for="localEncontrado">Ambiente</label>
+          <input
+            class="cadastroInput"
+            type="text"
+            name="ambiente"
+            required
+            placeholder="Local Encontrado"
+          />
+        </div>
+        <div class="input-container">
+          <label for="nomeEncontrador">Encontrado por:</label>
+          <input
+            class="cadastroInput"
+            type="text"
+            name="encontrado"
+            required
+            placeholder="Nome do Encontrador"
+          />
+        </div>
+        <div class="input-container">
+          <label for="imagem_objeto">Imagem</label>
+          <input type="file" id="imagem_objeto" name="imagem_objeto" accept="imagem/*"><br>
+        </div>
+        <div class="input-container">
+          <label for="nomeProfessor">Professor</label>
+          <input
+            class="cadastroInput"
+            type="text"
+            name="professor"
+            placeholder="Nome do Professor"
+          />
+        </div>
+        <div class="input-container">
+          <label for="curso">Curso</label>
+          <input
+            class="cadastroInput"
+            type="text"
+            name="curso"
+            placeholder="Curso"
+          />
+        </div>
+        <button type="submit">Enviar</button>
+        <button type="button" class="button" onclick="window.location.href='/html/home.html'">Voltar</button>
+      </form>
     </main>
-</body>
+  </body>
 </html>

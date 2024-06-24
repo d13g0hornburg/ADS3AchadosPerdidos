@@ -1,30 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprimir Objeto</title>
     <link rel="stylesheet" href="/styles.css">
-    <script src="/script.js"></script>
-    <style>
-        /* Layout simplificado para impressão */
-        .print-container {
-            margin: 20px;
-            font-family: Arial, sans-serif;
-        }
-        .print-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .print-item {
-            margin-bottom: 10px;
-        }
-        @media print {
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="print-container">
@@ -39,8 +19,12 @@
         <div class="print-item"><strong>Data:</strong> <%= format(new Date(objeto.data), 'yyyy-MM-dd') %></div>
         <div class="print-item"><strong>Hora:</strong> <%= objeto.hora.slice(0, 5) %></div>
         <div class="print-item"><strong>Encontrado por:</strong> <%= objeto.encontrado %></div>
+        <div class="print-item"><strong>Imagem:</strong><img src="/uploads/<%= objeto.imagem_objeto %>" alt="Imagem do Objeto" style="max-width: 50%; height: auto;"></div>
     </div>
-    <button class="no-print" onclick="window.print()">Imprimir</button>
-    <button class="no-print" onclick="window.close()">Fechar</button>
+    <div class="no-print" style="text-align: center; margin-top: 20px;">
+        <button onclick="window.print()">Imprimir</button>
+        <button onclick="window.close()">Fechar</button>
+        <button onclick="window.location.href='/home'">Home</button>
+    </div>
 </body>
 </html>

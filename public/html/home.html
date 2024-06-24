@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
     <title>Achados e Perdidos</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-          <a href="/html/home.html">Home</a>
-                <a href="/html/sobre.html">Sobre </a>
-                <a href="/html/apoio.html">Apoio</a>
+      <a class="a" href="/html/home.html">Home</a>
+      <a class="a" href="/html/sobre.html">Sobre </a>
+      <a class="a" href="/html/apoio.html">Apoio</a>
     </header>
-    <main>
-        <section id="home">
-            <div id="h1"><h1>Bem vindo(a)</h1></div>
-            <div id="botoes">
-                <form id="cadastrarItem-form" action="cadastrarItem.html" method="get">
-                    <input type="submit" value="Adicionar Achados">
-                </form>
-                <form id="listar-form" action="/listar" method="get">
-                    <input type="submit" value="Listar todos">
-                </form>
-            </div>
-        </section>
+    <main id="mainHome">
+      <section id="sectionHome">
+        <div id="msgBemVindo">
+          <h1 id="msg">Bem-vindo(a)</h1>
+
+          <p id="txt-boasVindas">
+            Bem-vindo ao Sistema de Achados e Perdidos do Senac Jaraguá do Sul
+            Prezada Coordenação e Administração, É com grande satisfação que
+            apresentamos o nosso novo Sistema de Achados e Perdidos,
+            desenvolvido especialmente para facilitar a gestão e a recuperação
+            de itens perdidos em nosso campus. Este sistema foi criado com o
+            intuito de proporcionar uma solução prática e eficiente para o
+            manejo de objetos encontrados, auxiliando na organização e na
+            comunicação entre os setores administrativos.
+          </p>
+          <div id="slider">
+            <div id="slide"><h1>SLIDE</h1></div>
+          </div>
+        </div>
+        <div id="botoes">
+          <form
+            id="cadastrarItem-form"
+            action="cadastrarItem.html"
+            method="get"
+          >
+            <input
+              class="btn-achados"
+              id="addAchado"
+              type="submit"
+              value="Adicionar Achados"
+            />
+          </form>
+          <form id="listar-form" action="/listar" method="get">
+            <input
+              class="btn-achados"
+              id="seeAchado"
+              type="submit"
+              value="Listar todos"
+            />
+          </form>
+        </div>
+      </section>
     </main>
-</body>
+    <footer id="footerHome"></footer>
+  </body>
 </html>

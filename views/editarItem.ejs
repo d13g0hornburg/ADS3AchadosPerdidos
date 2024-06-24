@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Editar Item</title>
+</head>
+<body>
+    <header>
+        <a class="a no-print" href="/html/home.html">Home</a>
+        <a class="a no-print" href="/html/sobre.html">Sobre</a>
+        <a class="a no-print" href="/html/apoio.html">Apoio</a>
+    </header>
+    <main id="mainEditar">
+        <div class="form-container">
+            <h1>Editar Item</h1>
+            <form action="/atualizarObjeto/<%= objeto.id %>" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" value="<%= objeto.descricao %>" required>
+                </div>
+                <div>
+                    <label for="ambiente">Ambiente:</label>
+                    <input type="text" id="ambiente" name="ambiente" value="<%= objeto.ambiente %>" required>
+                </div>
+                <div>
+                    <label for="professor">Professor:</label>
+                    <input type="text" id="professor" name="professor" value="<%= objeto.professor %>" required>
+                </div>
+                <div>
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" name="curso" value="<%= objeto.curso %>" required>
+                </div>
+                <div>
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" value="<%= objeto.data.toISOString().slice(0, 10) %>" required>
+                </div>
+                <div>
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" value="<%= objeto.hora %>" required>
+                </div>
+                <div>
+                    <label for="encontrado">Encontrado por:</label>
+                    <input type="text" id="encontrado" name="encontrado" value="<%= objeto.encontrado %>" required>
+                </div>
+                <div>
+                    <label for="imagem_objeto">Nova Imagem:</label>
+                    <input type="file" id="imagem_objeto" name="imagem_objeto">
+                </div>
+                <input type="hidden" name="imagem_existente" value="<%= objeto.imagem_objeto %>">
+                <div>
+                    <button type="submit">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
