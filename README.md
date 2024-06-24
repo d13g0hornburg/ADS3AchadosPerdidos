@@ -41,6 +41,12 @@ npm install multer
 ~~~ bash
 npm install express-validator
 ~~~
+~~~ bash
+npm install path
+~~~
+~~~ bash
+npm install fs
+~~~
 
 ## Como usar:
 - Cadastrar novo objeto:
