@@ -70,11 +70,6 @@ app.get('/apoio', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/html', 'apoio.html'));
 });
  
-// Rota de apoio
-app.get('/carrossel', function(req, res) {
-    res.sendFile(path.join(__dirname, '/public/html', 'carrossel.html'));
-});
-
 // Rota sobre
 app.get('/sobre', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/html', 'sobre.html'));
@@ -116,43 +111,36 @@ app.post('/login', function(req, res) {
         res.status(500).send("Erro interno");
     }
 });
- 
+
 // Rota para cadastrar objeto
-app.post('/objeto', upload.single('imagem_objeto'), [
-    body('descricao').isString().trim().escape(),
-    body('ambiente').isString().trim().escape(),
-    body('professor').isString().trim().escape(),
-    body('curso').isString().trim().escape(),
-    body('data').isDate().trim().escape(),
-    body('hora').isString().trim().escape(),
-    body('encontrado').isBoolean(),
-    body('imagem_objeto').isString().trim().escape()
-], function (req, res) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
- 
+app.post('/objeto', upload.single('imagem_objeto'), function (req, res) {
     try {
-        const { descricao, ambiente, professor, curso, data, hora, encontrado } = req.body;
-        const imagem_objeto = req.file ? req.file.filename : null;
- 
-        connection.query('INSERT INTO objeto (descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto], function(error, results, fields) {
-            if (error) {
-                console.error('Erro ao cadastrar objeto: ', error);
-                res.status(500).send('Erro interno ao cadastrar objeto');
-                return;
-            }
-            res.send('Objeto inserido com sucesso!');
-        });
-    } catch (error) {
-        console.error("Erro ao cadastrar o objeto", error);
-        res.status(404).send("Erro interno");
+    const { descricao, ambiente, professor, curso, data, hora, encontrado } = req.body;
+    const imagem_objeto = req.file.filename;
+
+    if (!imagem_objeto) {
+        res.status(400).send('Erro: Nenhum arquivo de imagem enviado.');
+        return;
     }
+
+    // Query para inserir os dados do objeto no banco de dados
+    const query = 'INSERT INTO objeto (descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    connection.query(query, [descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto], function (error, results, fields) {
+        if (error) {
+            console.error('Erro ao cadastrar objeto: ', error);
+            res.status(500).send('Erro interno ao cadastrar objeto');
+            return;
+        }
+        res.send('Objeto inserido com sucesso!');
+    });
+        } catch (error) {
+                console.error("Erro ao cadastrar o objeto", error);
+                res.status(404).send("Erro interno");
+        }
 });
  
 // Rota para listar objetos
-app.post('/listar', function(req, res) {
+app.get('/listar', function(req, res) {
     try {
         const listar = "SELECT * FROM objeto";
  
@@ -246,6 +234,18 @@ app.get('/imprimir/:id', function (req, res) {
     });
 });
 
+app.get('/api/images', (req, res) => {
+    const imagesFolder = path.join(__dirname, 'uploads');
+    fs.readdir(imagesFolder, (err, files) => {
+        if (err) {
+            return res.status(500).send('Impossível encontrar a pasta de imagens!: ' + err);
+        }
+
+        // Filtra imagens
+        const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/.test(file));
+        res.json(images);
+    });
+});
 
 // Configuração da aplicação rodando no localhost, ouvindo a porta 8008
 app.listen(8008, function () {
