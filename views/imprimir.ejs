@@ -5,26 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprimir Objeto</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Cor de fundo opcional para diferenciar visualmente */
+        }
+
+        .print-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center; /* Centraliza todo o conteúdo */
+        }
+
+        .print-header {
+            margin-bottom: 20px;
+        }
+
+        .print-main {
+            display: flex;
+            justify-content: space-between; /* Distribui os elementos em duas colunas */
+            margin-bottom: 10px; /* Espaçamento entre as colunas */
+            margin-left: 75px;
+        }
+
+        .print-details,
+        .print-details2 {
+            flex: 1; /* Ocupa 1/2 do espaço disponível */
+            text-align: left; /* Alinha o conteúdo à esquerda */
+            padding-right: 10px; /* Espaçamento à direita */
+        }
+
+        .print-item {
+            display: flex;
+            align-items: center; /* Alinha os itens verticalmente */
+            margin-bottom: 10px;
+        }
+
+        .print-label {
+            font-weight: bold;
+            min-width: 100px; /* Largura mínima para rótulo */
+        }
+
+        .print-value {
+            flex: 1; /* Ocupa todo o espaço disponível */
+        }
+
+        .print-image {
+            margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+            text-align: center;
+        }
+
+        .print-actions {
+            margin-top: 20px;
+        }
+
+        .print-actions button {
+            margin: 0 10px; /* Espaçamento entre os botões */
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .print-signature, .signature-field {
+            padding: 10px;
+        }
+
+        @media print {
+            .print-actions {
+                display: none; /* Oculta os botões na impressão */
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Ajuste para telas menores, se necessário */
+            .print-main {
+                flex-direction: column; /* Empilha as colunas em telas menores */
+            }
+
+            .print-details,
+            .print-details2 {
+                padding-right: 0; /* Remove o espaçamento à direita */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="print-container">
         <div class="print-header">
             <h1>Protocolo do Objeto</h1>
         </div>
-        <div class="print-item"><strong>Código:</strong> <%= objeto.id %></div>
-        <div class="print-item"><strong>Descrição:</strong> <%= objeto.descricao %></div>
-        <div class="print-item"><strong>Ambiente:</strong> <%= objeto.ambiente %></div>
-        <div class="print-item"><strong>Professor:</strong> <%= objeto.professor %></div>
-        <div class="print-item"><strong>Curso:</strong> <%= objeto.curso %></div>
-        <div class="print-item"><strong>Data:</strong> <%= format(new Date(objeto.data), 'yyyy-MM-dd') %></div>
-        <div class="print-item"><strong>Hora:</strong> <%= objeto.hora.slice(0, 5) %></div>
-        <div class="print-item"><strong>Encontrado por:</strong> <%= objeto.encontrado %></div>
-        <div class="print-item"><strong>Imagem:</strong><img src="/uploads/<%= objeto.imagem_objeto %>" alt="Imagem do Objeto" style="max-width: 50%; height: auto;"></div>
-    </div>
-    <div class="no-print" style="text-align: center; margin-top: 20px;">
-        <button onclick="window.print()">Imprimir</button>
-        <button onclick="window.close()">Fechar</button>
-        <button onclick="window.location.href='/home'">Home</button>
+        <div class="print-main">
+            <div class="print-details">
+                <div class="print-item">
+                    <div class="print-label">Código:</div>
+                    <div class="print-value"><%= objeto.id %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Ambiente:</div>
+                    <div class="print-value"><%= objeto.ambiente %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Encontrado <br> por:</div>
+                    <div class="print-value"><%= objeto.encontrado %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Data:</div>
+                    <div class="print-value"><%= format(new Date(objeto.data), 'yyyy-MM-dd') %></div>
+                </div>
+            </div>
+            <div class="print-details2">
+                <div class="print-item">
+                    <div class="print-label">Descrição:</div>
+                    <div class="print-value"><%= objeto.descricao %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Professor:</div>
+                    <div class="print-value"><%= objeto.professor %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Curso:</div>
+                    <div class="print-value"><%= objeto.curso %></div>
+                </div>
+                <div class="print-item">
+                    <div class="print-label">Hora:</div>
+                    <div class="acao print-value"><%= objeto.hora.slice(0, 5) %></div>
+                </div>
+            </div>
+        </div>
+        <div class="print-image">
+            <div class="print-label">Imagem:</div>
+            <div class="print-value"><img src="/uploads/<%= objeto.imagem_objeto %>" alt="Imagem do Objeto" style="max-width: 100%; height: auto;"></div>
+        </div>
+        <div class="print-signature">
+            <div class="signature-field">
+                <div class="signature-label">Data da Retirada:___/___/_____</div>
+                <div class="signature-line"></div>
+            </div>
+            <div class="signature-field">
+                <div class="signature-label">Assinatura do Recebedor: _____________</div>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+        <div class="print-actions">
+            <button onclick="window.print()">Imprimir</button>
+            <button onclick="window.close()">Fechar</button>
+            <button onclick="window.location.href='/html/home.html'">Home</button>
+        </div>
     </div>
 </body>
 </html>

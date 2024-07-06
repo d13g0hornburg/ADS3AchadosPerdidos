@@ -1,18 +1,26 @@
 @charset "UTF-8";
 
+/* Estilos globais */
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
+
 body {
   background-color: #eeeeee;
 }
-/**============================= Index Inicio =======================================*/
-#bodyIndex{
+
+ /* index */
+
+ #bodyIndex {
   background-color: #3a3185;
 }
+
+/* Estilo formulários */
+
 ::selection {
   background-color: gray;
 }
@@ -26,60 +34,45 @@ body {
 
 .form {
   width: 400px;
-  height: 350px; /*altura para 350px */
+  height: 350px;
   background-image: linear-gradient(to bottom, #424242, #212121);
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 0.5rem;
 }
-
 .titulo {
   color: #f49d19;
   margin: 3rem 0;
   font-size: 2rem;
 }
-
 .input {
   margin: 0.5rem 0;
   padding: 1rem 0.5rem;
-  width: 20rem;
+  width: 10rem;
   background-color: inherit;
   color: #f49d19;
-  border: none;
-  outline: none;
 }
-
 .username {
   border-bottom: 1px solid #77593b;
   transition: all 400ms;
 }
-/*-----------------------------*/
-/* Começo Cor do fundo da icone do nome */
 .username:hover {
   background-color: #424242;
   border: none;
   border-radius: 0.5rem;
 }
-/*final da Cor do fundo da icone do nome*/
-/*-------------------------------*/
-
 .password {
   border-bottom: 1px solid #77593b;
   transition: all 400ms;
 }
-
-/*-----------------------------*/
-/* Começo Cor do fundo da icone do Senha */
 .password:hover {
   background-color: #424242;
   border: none;
   border-radius: 0.5rem;
 }
-/*final da Cor do fundo da icone do Senha*/
-/*-----------------------------*/
-
 .btn {
+  width: 40%;
   padding: 1rem 2rem;
   font-weight: 700;
   background: rgb(0, 0, 0);
@@ -91,7 +84,6 @@ body {
   border-left: 2px solid #d48738;
   transition-duration: 1s;
 }
-
 .btn:hover {
   border-top: 2px solid #bb8958;
   border-left: 2px solid #b17e4c;
@@ -99,9 +91,9 @@ body {
   border-right: 2px solid #d48738;
   box-shadow: #77593b 5px 5px, #d48738 10px 10px, #355fa8 15px 15px;
 }
-/**============================== Index Final ======================================*/
 
-/*?============================== Home Inicio =======================================*/
+/* home */
+
 :root {
   --azul: #1453bd;
   --amarelo: #f19000;
@@ -110,8 +102,6 @@ body {
 }
 
 header {
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: space-evenly;
   background-color: var(--azul);
@@ -121,6 +111,7 @@ header {
   color: var(--branco);
   position: fixed;
 }
+
 .a {
   text-decoration: none;
   color: var(--branco);
@@ -133,12 +124,14 @@ header {
   font-size: x-large;
   transition: 1s;
 }
+
 #mainHome {
   height: 74vh;
   padding-top: 11vh;
   margin-inline: 25px;
   text-align: justify;
 }
+
 #h1 {
   display: flex;
   justify-content: center;
@@ -152,19 +145,29 @@ header {
 #msg {
   margin: 25px;
 }
-#slider {
-  margin: 25px;
-  background-color: var(--roxo);
-  height: 350px;
-  width: 550px;
+
+/* Carrossel */
+.carrossel {
+  box-shadow: 2px 2px 4px black;
+  overflow: hidden;
+  height: 500px;
+  width: 500px; 
+  position: relative; /* Adicionado para posicionamento correto */
+}
+
+.carrossel .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
 }
-#slide {
-  color: var(--branco);
+
+.carrossel .img {
+  object-fit: cover;
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0; /* Garante que as imagens não encolham */
 }
+
 #botoes {
   display: flex;
   justify-content: center;
@@ -188,6 +191,7 @@ header {
   width: 254px;
   font-size: large;
 }
+
 #txt-boasVindas {
   width: 750px;
   text-align: justify;
@@ -199,14 +203,14 @@ header {
   background-color: var(--azul);
 }
 
-/*?============================ Home Final ================================*/
-/*!=========================== Inicio Listar ==============================*/
+/* Listar-listagem */
 #mainListar {
   height: 74vh;
   padding-top: 11vh;
   margin-inline: 25px;
   text-align: justify;
 }
+
 #relatorio,
 table {
   margin: 0;
@@ -277,13 +281,12 @@ table {
   border-radius: 20px;
   text-decoration: none;
 }
-/* Container da tabela */
+
 .table-container {
   margin: 20px;
-  overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  overflow-x: auto;
 }
 
-/* Estilo tabela */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -291,7 +294,6 @@ table {
   min-width: 800px; 
 }
 
-/* Estilo header tabela*/
 th {
   background-color: #f2f2f2;
   padding: 10px;
@@ -300,13 +302,11 @@ th {
   border-bottom: 2px solid #ddd;
 }
 
-/* Estilo body tabela */
 td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
-/* Estilos para a versão impressa */
 @media print {
   body {
     margin: 0;
@@ -315,14 +315,14 @@ td {
   }
 
   header {
-    display: none; /* Oculta o cabeçalho na versão impressa */
+    display: none;
   }
 
   .table-container {
     margin: 0;
     padding: 0;
     border: none;
-    overflow-x: auto; /* Permite rolagem horizontal em telas menores */
+    overflow-x: auto;
   }
 
   table {
@@ -344,77 +344,15 @@ td {
   }
 
   .no-print {
-    display: none; /* Oculta elementos com a classe 'no-print' na versão impressa */
+    display: none;
   }
 
-  /* Definindo orientação paisagem */
   @page {
     size: landscape;
   }
-}@media print {
-    body {
-        margin: 0;
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    header {
-      display: none;
-    }
-  
-    .table-container {
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-  
-    table th,
-    table td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    
-    .print-container {
-        max-width: 100%; /* Utilize 100% para ocupar toda a largura da página */
-        margin: 0 auto;
-        border: 1px solid #ccc;
-        padding: 0px;
-    }
-    .print-header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .print-item {
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        word-wrap: break-word; /* Permite que o texto seja quebrado em várias linhas */
-        overflow-wrap: break-word; /* Para suporte adicional à quebra de palavras */
-    }
-    .print-item:last-child {
-        margin-bottom: 0; /* Remove a margem inferior do último item */
-    }
-    .print-item strong {
-        display: inline-block;
-        width: 20px;
-    }
-    .no-print {
-        display: none;
-    }
-
-    #no-printAcao {
-      display: none;
-    }
-
-    /* Definindo orientação paisagem */
-    @page {
-        size: landscape;
-    }
 }
-/*!============================ Final Listar ==============================*/
 
-/*todo========================= Inicio Sobre ==============================*/
+/* sobre */
 #sobre {
   height: 74vh;
   padding-top: 11vh;
@@ -424,9 +362,11 @@ td {
   flex-direction: column;
   align-items: center;
 }
+
 h2 {
   text-align: center;
 }
+
 #txt-sobre-div {
   width: 750px;
 }
@@ -439,49 +379,38 @@ h2 {
   margin-block: 30px;
   font-weight: 600;
 }
-li{
-  margin-inline: 40px;
-  margin-block: 20px;
-  font-weight: 600;
-}
-/*todo======================= Final Sobre ===============================*/
 
-/*? ======================= inicio Cadastro =============================*/
-/* Reset de estilos padrão */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* cadastro */
+
 main {
   margin: 20px;
 }
- 
+
 h2 {
   margin-bottom: 10px;
   color:#d48738
 }
- 
+
 .input-container {
   margin-bottom: 15px;
 }
- 
+
 label {
   display: block;
   margin-bottom: 5px;
   color:#d48738
 }
- 
+
 input[type="text"],
 input[type="date"],
 button {
-  width: calc(100% - 10px); /* Ajuste para compensar o padding */
+  width: calc(100% - 10px);
   padding: 5px;
   margin-top: 5px;
   border: 1px solid #cccccc;
   border-radius: 3px;
 }
- 
+
 button {
   background-color: #234277;
   color: white;
@@ -489,12 +418,79 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
- 
+
 button:hover {
   background-color: #bd7b39
 }
- 
+
 input:invalid {
   border-color: #d48738
 }
-/*? ======================== Final Cadastro =============================*/
+
+/* Impressoes-medias-queries */
+
+@media print {
+  body {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  header {
+    display: none;
+  }
+
+  .table-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .print-container {
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 0px;
+  }
+
+  .print-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .print-item {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .print-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .print-item strong {
+    display: inline-block;
+    width: 20px;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  #no-printAcao {
+    display: none;
+  }
+
+  @page {
+    size: landscape;
+  }
+}

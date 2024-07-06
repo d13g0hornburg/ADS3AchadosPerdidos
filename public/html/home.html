@@ -7,6 +7,21 @@
     <script src="/script.js" defer></script>
     <title>Achados e Perdidos</title>
   </head>
+  <style>
+    .carousel-container {
+        overflow: hidden;
+        width: 500px;
+        margin: 0 auto;
+    }
+    #img {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .carousel-container img {
+        width: 500px;
+        height: auto;
+    }
+</style>
   <body>
     <header>
       <a class="a" href="/html/home.html">Home</a>
@@ -17,7 +32,7 @@
       <section id="sectionHome">
         <div id="msgBemVindo">
           <h1 id="msg">Bem-vindo(a)</h1>
-
+ 
           <p id="txt-boasVindas">
             Bem-vindo ao Sistema de Achados e Perdidos do Senac Jaraguá do Sul
             Prezada Coordenação e Administração, É com grande satisfação que
@@ -28,14 +43,19 @@
             manejo de objetos encontrados, auxiliando na organização e na
             comunicação entre os setores administrativos.
           </p>
-          <div id="slider">
-            <div id="slide"><h1>SLIDE</h1></div>
+          <div class="carousel-container">
+              <div id="img">
+                  <img src="/uploads/imagem1.jpg" alt="Imagem 1">
+                  <img src="/uploads/imagem2.jpg" alt="Imagem 2">
+                  <img src="/uploads/imagem3.jpg" alt="Imagem 3">
+              </div>
           </div>
+        </div>
         </div>
         <div id="botoes">
           <form
             id="cadastrarItem-form"
-            action="cadastrarItem.html"
+            action="/cadastrarItem"
             method="get"
           >
             <input
@@ -45,7 +65,7 @@
               value="Adicionar Achados"
             />
           </form>
-          <form id="listar-form" action="/listar" method="get">
+          <form id="listar-form" action="/listar" method="post">
             <input
               class="btn-achados"
               id="seeAchado"
@@ -57,5 +77,6 @@
       </section>
     </main>
     <footer id="footerHome"></footer>
+    <script src="/carrossel.js"></script>
   </body>
 </html>
