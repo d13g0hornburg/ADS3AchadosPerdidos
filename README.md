@@ -30,13 +30,13 @@ Semestre: 3
 
  ### 6-Comandos para instalar as dependências do NODE.JS
 	*npm install express
- 	*npm install mysql2
-  	*npm install body-parser 
-   	*npm install date-fns
-    	*npm install express-validator
-     	*npm install path
-      	*npm install fs
-        *npm install multer
+	*npm install mysql2
+	*npm install body-parser 
+	*npm install date-fns
+	*npm install express-validator
+	*npm install path
+	*npm install fs
+	*npm install multer
 
  ### Modelo de protocolo
 <a href="https://ibb.co/DMnm4WW"><img src="https://i.ibb.co/hdvrs99/achados-perdidos.jpg" alt="achados-perdidos" border="0" /></a>
