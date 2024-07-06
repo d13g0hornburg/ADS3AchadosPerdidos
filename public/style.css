@@ -103,6 +103,7 @@ body {
   --amarelo: #f19000;
   --roxo: #3a3185;
   --branco: #fff;
+  --preto: black ;
 }
 
 header {
@@ -187,11 +188,11 @@ header {
   margin: 25px;
   height: 50px;
   width: 150px;
-  transition: height 1s, width 2s, background-color 2s, font-size 1s, color 1s;
+  transition: height 1s, width 2s;background-color: 2s, font-size 1s, color 1s;
   background: none;
   border-radius: 20px;
   border: none;
-  color: var(--branco);
+  color: var(--preto);
 }
 #botoes > form > input:hover {
   transition: 1s;

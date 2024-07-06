@@ -1,0 +1,27 @@
+/* media_query.css */
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+    body {
+      font-size: 12px; /* Reduzir o tamanho da fonte */
+    }
+  
+    form {
+      max-width: 80%; /* Reduzir a largura do formulário */
+    }
+  
+    .cadastroInput {
+      font-size: 12px; /* Ajustar o tamanho da fonte dos inputs */
+    }
+  }
+  
+  /* Estilos para telas muito pequenas (como smartphones em modo retrato) */
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 14px; /* Reduzir ainda mais o tamanho da fonte */
+    }
+  
+    form {
+      max-width: 90%; /* Reduzir mais a largura do formulário */
+    }
+  }
