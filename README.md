@@ -1,7 +1,7 @@
 # PROJETO EXTENSÃO ADS 3
 
 Faculdade Senac de Jaraguá do Sul
-Equipe: Davi, Diego, Enthoni, Mateus, Samuel
+Equipe: Davi, Diego, Enthoni, Mateus
 Professor: Márcio Rui
 Semestre: 3
 
