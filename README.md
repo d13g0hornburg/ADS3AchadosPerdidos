@@ -33,7 +33,7 @@
  	*npm install mysql2
   	*npm install body-parser 
    	*npm install date-fns
-       	*npm install express-validator
+	*npm install express-validator
 	*npm install sharp
 	*npm install multer
  	*npm install fs
