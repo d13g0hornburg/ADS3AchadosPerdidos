@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { body, validationResult } = require('express-validator');
 const { format } = require('date-fns');
+const sharp = require('sharp');
 const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
@@ -113,30 +114,47 @@ app.post('/login', function(req, res) {
 });
 
 // Rota para cadastrar objeto
-app.post('/objeto', upload.single('imagem_objeto'), function (req, res) {
+app.post('/objeto', upload.single('imagem_objeto'), async (req, res) => {
     try {
-    const { descricao, ambiente, professor, curso, data, hora, encontrado } = req.body;
-    const imagem_objeto = req.file.filename;
+        const { descricao, ambiente, professor, curso, data, hora, encontrado } = req.body;
+        let imagem_objeto = req.file ? req.file.filename : null;
 
-    if (!imagem_objeto) {
-        res.status(400).send('Erro: Nenhum arquivo de imagem enviado.');
-        return;
-    }
-
-    // Query para inserir os dados do objeto no banco de dados
-    const query = 'INSERT INTO objeto (descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-    connection.query(query, [descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto], function (error, results, fields) {
-        if (error) {
-            console.error('Erro ao cadastrar objeto: ', error);
-            res.status(500).send('Erro interno ao cadastrar objeto');
+        if (!imagem_objeto) {
+            res.status(400).send('Erro: Nenhum arquivo de imagem enviado.');
             return;
         }
-        res.send('Objeto inserido com sucesso!');
-    });
-        } catch (error) {
-                console.error("Erro ao cadastrar o objeto", error);
-                res.status(404).send("Erro interno");
-        }
+
+        // Caminho da imagem original
+        const imagePath = path.join(__dirname, 'uploads', imagem_objeto);
+        
+        // Caminho para salvar a imagem redimensionada
+        const resizedImagePath = path.join(__dirname, 'uploads', `resized_${imagem_objeto}`);
+
+        // Redimensionamento da imagem para 300x300 pixels usando sharp
+        await sharp(imagePath)
+            .resize({ width: 300, height: 300 })
+            .toFile(resizedImagePath);
+
+        // Excluir a imagem original se desejar
+        // fs.unlinkSync(imagePath);
+
+        // Atualiza o nome do arquivo com a imagem redimensionada
+        imagem_objeto = `resized_${imagem_objeto}`;
+
+        // Query para inserir os dados do objeto no banco de dados
+        const query = 'INSERT INTO objeto (descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+        connection.query(query, [descricao, ambiente, professor, curso, data, hora, encontrado, imagem_objeto], function (error, results, fields) {
+            if (error) {
+                console.error('Erro ao cadastrar objeto: ', error);
+                res.status(500).send('Erro interno ao cadastrar objeto');
+                return;
+            }
+            res.send('Objeto inserido com sucesso!');
+        });
+    } catch (error) {
+        console.error("Erro ao cadastrar o objeto", error);
+        res.status(404).send("Erro interno");
+    }
 });
  
 // Rota para listar objetos

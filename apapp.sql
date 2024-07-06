@@ -56,8 +56,9 @@ CREATE TABLE `objeto` (
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
   `encontrado` varchar(255) DEFAULT NULL,
+  `imagem_objeto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +67,7 @@ CREATE TABLE `objeto` (
 
 LOCK TABLES `objeto` WRITE;
 /*!40000 ALTER TABLE `objeto` DISABLE KEYS */;
-INSERT INTO `objeto` VALUES (4,'mochila','sala100','jose','ADS','2024-06-25','15:00:00','Diego'),(5,'caneta','lab 105','karen','ADS','2024-06-01','15:25:00','Diego');
+INSERT INTO `objeto` VALUES (16,'Mochila','Lab13','Karen','ADS3','2024-06-01','22:00:00','Diego','1720297455897.jpg'),(20,'lapis2','sala01','Karen','teste','2024-06-25','13:00:00','diego','resized_1720297629954.jpg'),(21,'Laptop','teste3','diego','ads','2024-06-13','12:00:00','Diego','resized_1720297774502.jpg');
 /*!40000 ALTER TABLE `objeto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-03 12:01:44
+-- Dump completed on 2024-07-06 17:32:26

@@ -160,17 +160,23 @@ header {
 }
 
 .carrossel-container {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(0);
+  overflow: hidden;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
 }
 
+#img {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  max-width: 300px;
+  max-height: 300px
+}
 
 .carrossel .img {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
-  flex-shrink: 0; /* Garante que as imagens não encolham */
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover; /* Ajusta a imagem para caber dentro do contêiner mantendo a proporção */
 }
 
 #botoes {
