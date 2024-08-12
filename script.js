@@ -2,7 +2,6 @@
 const mysql = require('mysql2');
 const express = require('express');
 const bodyParser = require('body-parser');
-const { body, validationResult } = require('express-validator');
 const { format } = require('date-fns');
 const sharp = require('sharp');
 const path = require('path');
@@ -132,7 +131,7 @@ app.post('/objeto', upload.single('imagem_objeto'), async (req, res) => {
 
         // Redimensionamento da imagem para 300x300 pixels usando sharp
         await sharp(imagePath)
-            .resize({ width: 300, height: 300 })
+            .resize({ width: 387, height: 474 })
             .toFile(resizedImagePath);
 
         // Excluir a imagem original se desejar
@@ -149,7 +148,8 @@ app.post('/objeto', upload.single('imagem_objeto'), async (req, res) => {
                 res.status(500).send('Erro interno ao cadastrar objeto');
                 return;
             }
-            res.send('Objeto inserido com sucesso!');
+            // res.send('Objeto inserido com sucesso!');
+            res.render('listar', { objetos: rows, format });
         });
     } catch (error) {
         console.error("Erro ao cadastrar o objeto", error);
@@ -223,6 +223,7 @@ app.get('/excluir/:id', function(req, res) {
                 console.log("Objeto deletado!");
                 res.redirect('/listar');
             } else {
+                
                 console.log("Erro ao deletar objeto", err);
                 res.status(500).send("Erro ao deletar objeto");
             }
